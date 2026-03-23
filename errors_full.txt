@@ -1,0 +1,157 @@
+﻿
+src/features/auth/slices/authSlice.ts(102,9): error TS2322: Type '{ 
+permissions: ("dashboard.view" | "products.view" | "products.create" | 
+"products.edit" | "products.delete" | "products.import" | "products.export" | 
+"inventory.view" | "inventory.adjust" | ... 40 more ... | 
+"admin.fullAccess")[] | Permission[] | readonly [...] | readonly [...]; ... 10 
+more ...; lastLogin?: string; }' is not assignable to type 
+'WritableNonArrayDraft<User>'.
+src/features/auth/slices/authSlice.ts(125,9): error TS2322: Type '{ 
+permissions: ("dashboard.view" | "products.view" | "products.create" | 
+"products.edit" | "products.delete" | "products.import" | "products.export" | 
+"inventory.view" | "inventory.adjust" | ... 40 more ... | 
+"admin.fullAccess")[] | Permission[] | readonly [...] | readonly [...]; ... 10 
+more ...; lastLogin?: string; }' is not assignable to type 
+'WritableNonArrayDraft<User>'.
+src/features/hr/pages/EmployeeList.tsx(179,45): error TS2345: Argument of type 
+'Department | undefined' is not assignable to parameter of type 'string | 
+undefined'.
+src/features/inventory/pages/BinLocationManagement.tsx(161,20): error TS2322: 
+Type '{ borderBottomLeftRadius?: 
+Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+NonNullable<Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+undefined>[] | undefined; ... 5 more ...; backgroundColor: string; }' is not 
+assignable to type 'Properties<string | number, string & {}>'.
+src/features/inventory/pages/BinLocationManagement.tsx(165,20): error TS2322: 
+Type '{ borderBottomLeftRadius?: 
+Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+NonNullable<Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+undefined>[] | undefined; ... 5 more ...; backgroundColor: string; }' is not 
+assignable to type 'Properties<string | number, string & {}>'.
+src/features/inventory/pages/BinLocationManagement.tsx(169,20): error TS2322: 
+Type '{ borderBottomLeftRadius?: 
+Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+NonNullable<Property.BorderBottomLeftRadius<GriffelStylesCSSValue> | 
+undefined>[] | undefined; ... 5 more ...; backgroundColor: string; }' is not 
+assignable to type 'Properties<string | number, string & {}>'.
+src/features/inventory/pages/BinLocationManagement.tsx(255,25): error TS2322: 
+Type '"success" | "warning" | "danger"' is not assignable to type '"success" | 
+"warning" | "error" | "brand" | undefined'.
+src/features/inventory/pages/ReorderAlerts.tsx(48,5): error TS2322: Type 
+'string' is not assignable to type 'undefined'.
+src/features/inventory/pages/ReorderAlerts.tsx(52,5): error TS2322: Type 
+'string' is not assignable to type 'undefined'.
+src/features/inventory/pages/StockAdjustment.tsx(164,18): error TS2322: Type 
+'{ onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "quantity"; ref: RefCallBack; 
+type: "number"; }' is not assignable to type '{ children?: undefined; size?: 
+"small" | "medium" | "large" | undefined; appearance?: "outline" | "underline" 
+| "filled-darker" | "filled-lighter" | "filled-darker-shadow" | 
+"filled-lighter-shadow" | undefined; defaultValue?: string | undefined; 
+value?: string | undefined; onChange?: ((ev: ChangeEvent<...>, data: In...'.
+src/features/pos/pages/CashManagement.tsx(174,40): error TS2322: Type 'number' 
+is not assignable to type 'string'.
+src/features/pos/pages/CustomerDisplay.tsx(137,14): error TS2322: Type '{ 
+paddingTop: string; borderTopColor?: string[] | Property.BorderTopColor | 
+undefined; borderTopStyle?: Property.BorderTopStyle | 
+NonNullable<Property.BorderTopStyle | undefined>[] | undefined; 
+borderTopWidth?: Property.BorderTopWidth<...> | ... 1 more ... | undefined; }' 
+is not assignable to type 'Properties<string | number, string & {}>'.
+src/features/products/pages/ProductDetail.tsx(194,35): error TS2345: Argument 
+of type 'number | undefined' is not assignable to parameter of type 'number'.
+src/features/products/pages/ProductDetail.tsx(199,57): error TS2345: Argument 
+of type 'number | undefined' is not assignable to parameter of type 'number'.
+src/features/products/pages/ProductForm.tsx(123,57): error TS2353: Object 
+literal may only specify known properties, and 'status' does not exist in type 
+'UpdateRequest'.
+src/features/products/pages/ProductForm.tsx(125,53): error TS2353: Object 
+literal may only specify known properties, and 'status' does not exist in type 
+'CreateRequest'.
+src/features/products/pages/ProductForm.tsx(231,20): error TS2322: Type '{ 
+onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "unitPrice"; ref: RefCallBack; 
+type: "number"; }' is not assignable to type '{ children?: undefined; size?: 
+"small" | "medium" | "large" | undefined; appearance?: "outline" | "underline" 
+| "filled-darker" | "filled-lighter" | "filled-darker-shadow" | 
+"filled-lighter-shadow" | undefined; defaultValue?: string | undefined; 
+value?: string | undefined; onChange?: ((ev: ChangeEvent<...>, data: In...'.
+src/features/products/pages/ProductForm.tsx(249,20): error TS2322: Type '{ 
+onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "purchasePrice"; ref: 
+RefCallBack; type: "number"; }' is not assignable to type '{ children?: 
+undefined; size?: "small" | "medium" | "large" | undefined; appearance?: 
+"outline" | "underline" | "filled-darker" | "filled-lighter" | 
+"filled-darker-shadow" | "filled-lighter-shadow" | undefined; defaultValue?: 
+string | undefined; value?: string | undefined; onChange?: ((ev: 
+ChangeEvent<...>, data: In...'.
+src/features/products/pages/ProductForm.tsx(269,20): error TS2322: Type '{ 
+onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "taxRate"; ref: RefCallBack; 
+type: "number"; step: string; }' is not assignable to type '{ children?: 
+undefined; size?: "small" | "medium" | "large" | undefined; appearance?: 
+"outline" | "underline" | "filled-darker" | "filled-lighter" | 
+"filled-darker-shadow" | "filled-lighter-shadow" | undefined; defaultValue?: 
+string | undefined; value?: string | undefined; onChange?: ((ev: 
+ChangeEvent<...>, data: In...'.
+src/features/products/pages/ProductForm.tsx(314,20): error TS2322: Type '{ 
+onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "reorderLevel"; ref: 
+RefCallBack; type: "number"; }' is not assignable to type '{ children?: 
+undefined; size?: "small" | "medium" | "large" | undefined; appearance?: 
+"outline" | "underline" | "filled-darker" | "filled-lighter" | 
+"filled-darker-shadow" | "filled-lighter-shadow" | undefined; defaultValue?: 
+string | undefined; value?: string | undefined; onChange?: ((ev: 
+ChangeEvent<...>, data: In...'.
+src/features/products/pages/ProductForm.tsx(332,20): error TS2322: Type '{ 
+onChange: (e: ChangeEvent<HTMLInputElement>) => void; onBlur: Noop; value: 
+number; disabled?: boolean | undefined; name: "leadTimeDays"; ref: 
+RefCallBack; type: "number"; }' is not assignable to type '{ children?: 
+undefined; size?: "small" | "medium" | "large" | undefined; appearance?: 
+"outline" | "underline" | "filled-darker" | "filled-lighter" | 
+"filled-darker-shadow" | "filled-lighter-shadow" | undefined; defaultValue?: 
+string | undefined; value?: string | undefined; onChange?: ((ev: 
+ChangeEvent<...>, data: In...'.
+src/features/products/pages/ProductReviews.tsx(78,36): error TS2322: Type '{ 
+paddingBottom: string; borderBottomColor?: string[] | 
+Property.BorderBottomColor | undefined; borderBottomStyle?: 
+Property.BorderBottomStyle | NonNullable<Property.BorderBottomStyle | 
+undefined>[] | undefined; borderBottomWidth?: Property.BorderBottomWidth<...> 
+| ... 1 more ... | undefined; }' is not assignable to type 'Properties<string 
+| number, string & {}>'.
+src/features/products/pages/ProductVariants.tsx(240,23): error TS2322: Type 
+'number' is not assignable to type 'string'.
+src/features/products/pages/ProductVariants.tsx(248,23): error TS2322: Type 
+'number' is not assignable to type 'string'.
+src/features/reports/pages/FinancialReport.tsx(255,17): error TS2322: Type '{ 
+marginTop: string; borderTopColor?: string[] | Property.BorderTopColor | 
+undefined; borderTopStyle?: Property.BorderTopStyle | 
+NonNullable<Property.BorderTopStyle | undefined>[] | undefined; 
+borderTopWidth?: Property.BorderTopWidth<...> | ... 1 more ... | undefined; }' 
+is not assignable to type 'Properties<string | number, string & {}>'.
+src/features/reports/pages/FinancialReport.tsx(341,17): error TS2322: Type '{ 
+marginTop: string; borderTopColor?: string[] | Property.BorderTopColor | 
+undefined; borderTopStyle?: Property.BorderTopStyle | 
+NonNullable<Property.BorderTopStyle | undefined>[] | undefined; 
+borderTopWidth?: Property.BorderTopWidth<...> | ... 1 more ... | undefined; }' 
+is not assignable to type 'Properties<string | number, string & {}>'.
+src/features/reports/pages/VarianceReports.tsx(105,23): error TS2322: Type 
+'"success" | "danger"' is not assignable to type '"success" | "warning" | 
+"error" | "brand" | undefined'.
+src/features/sales/pages/SalesReturns.tsx(143,42): error TS2322: Type 'number' 
+is not assignable to type 'string'.
+src/features/settings/pages/APIKeysManagement.tsx(100,87): error TS2322: Type 
+'{ appearance: "subtle"; size: "small"; icon: Element; iconOnly: true; }' is 
+not assignable to type 'IntrinsicAttributes & (ButtonProps & 
+RefAttributes<HTMLAnchorElement | HTMLButtonElement>)'.
+src/shared/utils/constants.ts(145,8): error TS2552: Cannot find name 
+'Permission'. Did you mean 'Permissions'?
+src/shared/utils/constants.ts(156,8): error TS2552: Cannot find name 
+'Permission'. Did you mean 'Permissions'?
+src/shared/utils/constants.ts(164,8): error TS2552: Cannot find name 
+'Permission'. Did you mean 'Permissions'?
+src/shared/utils/constants.ts(172,8): error TS2552: Cannot find name 
+'Permission'. Did you mean 'Permissions'?
+src/shared/utils/constants.ts(180,8): error TS2552: Cannot find name 
+'Permission'. Did you mean 'Permissions'?
+
+
