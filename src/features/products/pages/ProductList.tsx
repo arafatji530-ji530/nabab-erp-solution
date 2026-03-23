@@ -46,6 +46,9 @@ import {
   Dismiss20Regular,
   Image20Regular,
   Delete24Regular,
+  Filter20Regular,
+  ArrowSort20Regular,
+  ArrowDownload20Regular,
 } from '@fluentui/react-icons';
 import { apiService } from '@/services/api';
 import { formatCurrency } from '@/shared/utils/formatters';
@@ -977,16 +980,28 @@ export const ProductList = () => {
       </div>
 
       <Card className={classes.toolbar}>
-        <Input
-          className={classes.searchBox}
-          placeholder="Search products..."
-          contentBefore={<Search20Regular />}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <Button appearance="subtle">Filter</Button>
-        <Button appearance="subtle">Sort</Button>
-        <Button appearance="subtle">Export</Button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalM, width: '100%' }}>
+          <div style={{ flex: 1, maxWidth: '400px' }}>
+            <Input
+              className={classes.searchBox}
+              placeholder="Search products..."
+              contentBefore={<Search20Regular />}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: tokens.spacingHorizontalS }}>
+            <Button appearance="subtle" icon={<Filter20Regular />}>
+              Filter
+            </Button>
+            <Button appearance="subtle" icon={<ArrowSort20Regular />}>
+              Sort
+            </Button>
+            <Button appearance="subtle" icon={<ArrowDownload20Regular />}>
+              Export
+            </Button>
+          </div>
+        </div>
       </Card>
 
       {loading ? (
