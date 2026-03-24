@@ -272,6 +272,40 @@ export const dashboardService = {
     api.get<API.DashboardAPI.RecentActivitiesResponse>('/dashboard/recent-activities'),
 };
 
+// ============= Subscription Service =============
+export const subscriptionService = {
+  getPlans: () => api.get('/subscription/plans'),
+
+  getCurrentSubscription: () => api.get('/subscription/current'),
+
+  getUsageMetrics: () => api.get('/subscription/usage'),
+
+  getPaymentMethods: () => api.get('/subscription/payment-methods'),
+
+  getInvoices: (params?: PaginationParams) => {
+    const query = params ? `?${buildQueryString(params)}` : '';
+    return api.get(`/subscription/invoices${query}`);
+  },
+
+  upgradePlan: (data: { planId: string; billingCycle: 'month' | 'year' }) =>
+    api.post('/subscription/upgrade', data),
+
+  downgradePlan: (data: { planId: string; effectiveDate: string }) =>
+    api.post('/subscription/downgrade', data),
+
+  addPaymentMethod: (data: { type: string; tokenId: string; setDefault: boolean }) =>
+    api.post('/subscription/payment-methods', data),
+
+  setDefaultPaymentMethod: (methodId: string) =>
+    api.post(`/subscription/payment-methods/${methodId}/default`, {}),
+
+  cancelSubscription: (data: { reason: string; feedback?: string }) =>
+    api.post('/subscription/cancel', data),
+
+  pauseSubscription: (months: number) =>
+    api.post('/subscription/pause', { months }),
+};
+
 // Export all services
 export const apiService = {
   auth: authService,
@@ -288,4 +322,5 @@ export const apiService = {
   employees: employeeService,
   departments: departmentService,
   dashboard: dashboardService,
+  subscription: subscriptionService,
 };

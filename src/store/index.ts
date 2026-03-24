@@ -4,10 +4,12 @@
 
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '@/features/auth/slices/authSlice';
+import subscriptionReducer from '@/features/subscription/slices/subscriptionSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
+    subscription: subscriptionReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

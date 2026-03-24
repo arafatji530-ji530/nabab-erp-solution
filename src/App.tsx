@@ -152,7 +152,19 @@ const LocalizationSettings = lazy(() => import('./features/settings/pages/Locali
 const SecuritySettings = lazy(() => import('./features/settings/pages/SecuritySettings').then(m => ({ default: m.SecuritySettings })));
 
 // Subscription
-const SubscriptionManagement = lazy(() => import('./features/subscription/pages/SubscriptionManagement').then(m => ({ default: m.SubscriptionManagement })));
+const SubscriptionDashboard = lazy(() => import('./features/subscription/pages/SubscriptionDashboard').then(m => ({ default: m.SubscriptionDashboard })));
+const PlanManagement = lazy(() => import('./features/subscription/pages/PlanManagement').then(m => ({ default: m.PlanManagement })));
+const BillingHistory = lazy(() => import('./features/subscription/pages/BillingHistory').then(m => ({ default: m.BillingHistory })));
+const PaymentMethods = lazy(() => import('./features/subscription/pages/PaymentMethods').then(m => ({ default: m.PaymentMethods })));
+const AddOns = lazy(() => import('./features/subscription/pages/AddOns').then(m => ({ default: m.AddOns })));
+const UsageAnalytics = lazy(() => import('./features/subscription/pages/UsageAnalytics').then(m => ({ default: m.UsageAnalytics })));
+const TeamMembers = lazy(() => import('./features/subscription/pages/TeamMembers').then(m => ({ default: m.TeamMembers })));
+const SubscriptionSettings = lazy(() => import('./features/subscription/pages/SubscriptionSettings').then(m => ({ default: m.SubscriptionSettings })));
+const CancelSubscription = lazy(() => import('./features/subscription/pages/CancelSubscription').then(m => ({ default: m.CancelSubscription })));
+const RefundPolicy = lazy(() => import('./features/subscription/pages/RefundPolicy').then(m => ({ default: m.RefundPolicy })));
+const DownloadInvoice = lazy(() => import('./features/subscription/pages/DownloadInvoice').then(m => ({ default: m.DownloadInvoice })));
+const TaxDocuments = lazy(() => import('./features/subscription/pages/TaxDocuments').then(m => ({ default: m.TaxDocuments })));
+const NotificationPreferences = lazy(() => import('./features/subscription/pages/NotificationPreferences').then(m => ({ default: m.NotificationPreferences })));
 
 const useStyles = makeStyles({
   app: {
@@ -346,7 +358,21 @@ function App() {
                       </Route>
 
                       {/* Subscription */}
-                      <Route path="/subscription" element={<SubscriptionManagement />} />
+                      <Route path="/subscription">
+                        <Route index element={<SubscriptionDashboard />} />
+                        <Route path="plans" element={<PlanManagement />} />
+                        <Route path="billing" element={<BillingHistory />} />
+                        <Route path="invoices" element={<DownloadInvoice />} />
+                        <Route path="payment-methods" element={<PaymentMethods />} />
+                        <Route path="add-ons" element={<AddOns />} />
+                        <Route path="usage" element={<UsageAnalytics />} />
+                        <Route path="team" element={<TeamMembers />} />
+                        <Route path="settings" element={<SubscriptionSettings />} />
+                        <Route path="notifications" element={<NotificationPreferences />} />
+                        <Route path="tax-documents" element={<TaxDocuments />} />
+                        <Route path="refund-policy" element={<RefundPolicy />} />
+                        <Route path="cancel" element={<CancelSubscription />} />
+                      </Route>
 
                       {/* Settings */}
                       <Route path="/settings">
