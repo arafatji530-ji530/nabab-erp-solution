@@ -4,9 +4,9 @@ import {
   ArrowTrending20Regular,
   ArrowDown20Regular,
   ArrowUp20Regular,
-  TrendingUp20Regular,
+  DataTrending20Regular,
   Person20Regular,
-  ShoppingCart20Regular,
+  ShoppingBag20Regular,
   Home20Regular,
   Target20Regular,
 } from '@fluentui/react-icons';
@@ -245,7 +245,7 @@ export const Dashboard = () => {
       {/* Primary KPIs Grid */}
       <div className={classes.kpiGrid}>
         <Card className={classes.kpiCard}>
-          <div className={classes.kpiIconWrapper}><ShoppingCart20Regular /></div>
+          <div className={classes.kpiIconWrapper}><ShoppingBag20Regular /></div>
           <div>
             <div className={classes.kpiHeader}>
               <Text weight="semibold" size={400}>
@@ -271,7 +271,7 @@ export const Dashboard = () => {
         </Card>
 
         <Card className={classes.kpiCard}>
-          <div className={classes.kpiIconWrapper}><TrendingUp20Regular /></div>
+          <div className={classes.kpiIconWrapper}><DataTrending20Regular /></div>
           <div>
             <div className={classes.kpiHeader}>
               <Text weight="semibold" size={400}>
@@ -289,7 +289,7 @@ export const Dashboard = () => {
         </Card>
 
         <Card className={classes.kpiCard}>
-          <div className={classes.kpiIconWrapper}><ShoppingCart20Regular /></div>
+          <div className={classes.kpiIconWrapper}><ShoppingBag20Regular /></div>
           <div>
             <div className={classes.kpiHeader}>
               <Text weight="semibold" size={400}>
@@ -394,7 +394,7 @@ export const Dashboard = () => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" />
                 <YAxis />
-                <Tooltip formatter={(value) => formatCurrency(value)} />
+                <Tooltip formatter={(value: any) => formatCurrency(Number(value))} />
                 <Legend />
                 <Line
                   type="monotone"
@@ -543,6 +543,7 @@ export const Dashboard = () => {
       </div>
     </div>
   );
+}
 
 // Alias export for routing
 export const ExecutiveDashboard = Dashboard;
