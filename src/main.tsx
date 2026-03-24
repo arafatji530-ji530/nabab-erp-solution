@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { FluentProvider } from '@fluentui/react-components';
 import { store } from './store';
-import { nababLightTheme } from './core/theme/theme';
 import App from './App';
+import { ThemeProvider } from './core/providers/ThemeProvider';
 import { startMockServiceWorker } from './services/mock/mockHandlers';
 import { ENABLE_MOCK } from './shared/utils/constants';
 
@@ -18,9 +17,9 @@ if (ENABLE_MOCK) {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <FluentProvider theme={nababLightTheme}>
+      <ThemeProvider>
         <App />
-      </FluentProvider>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -7,11 +7,13 @@ import {
   SignOut20Regular,
   Settings20Regular,
   WeatherMoon20Regular,
+  WeatherSunny20Regular,
 } from '@fluentui/react-icons';
 import { layout, typography } from '../theme/theme';
 import { APP_NAME } from '@/shared/utils/constants';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { logout, selectUser } from '@/features/auth/slices/authSlice';
+import { useThemeContext } from '../providers/ThemeProvider';
 
 const useStyles = makeStyles({
   header: {
@@ -60,6 +62,7 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
   const classes = useStyles();
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
+  const { themeMode, toggleTheme } = useThemeContext();
 
   const handleLogout = () => {
     dispatch(logout());
@@ -96,8 +99,9 @@ export const Header = ({ onToggleSidebar }: HeaderProps) => {
         {/* Theme Toggle */}
         <Button
           appearance="subtle"
-          icon={<WeatherMoon20Regular />}
-          aria-label="Toggle theme"
+          icon={themeMode === 'dark' ? <WeatherSunny20Regular /> : <WeatherMoon20Regular />}
+          aria-label={themeMode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
+          onClick={toggleTheme}
         />
 
         {/* Notifications */}
