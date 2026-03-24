@@ -7,19 +7,26 @@ import { ThemeProvider } from './core/providers/ThemeProvider';
 import { startMockServiceWorker } from './services/mock/mockHandlers';
 import { ENABLE_MOCK } from './shared/utils/constants';
 
-// Start Mock Service Worker if enabled
-if (ENABLE_MOCK) {
-  startMockServiceWorker().catch((error) => {
-    console.error('Failed to start Mock Service Worker:', error);
-  });
-}
+const initializeApp = async () => {
+  // Start Mock Service Worker if enabled (wait for it before rendering)
+  if (ENABLE_MOCK) {
+    try {
+      await startMockServiceWorker();
+    } catch (error) {
+      console.error('Failed to start Mock Service Worker:', error);
+    }
+  }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </Provider>
-  </React.StrictMode>
-);
+  // Render app only after MSW is ready
+  ReactDOM.createRoot(document.getElementById('root')!).render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </Provider>
+    </React.StrictMode>
+  );
+};
+
+initializeApp();
