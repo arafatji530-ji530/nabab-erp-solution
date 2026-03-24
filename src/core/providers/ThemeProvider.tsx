@@ -43,7 +43,9 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={value}>
-      <FluentProvider theme={theme}>{children}</FluentProvider>
+      <FluentProvider key={themeMode} theme={theme}>
+        {children}
+      </FluentProvider>
     </ThemeContext.Provider>
   );
 };
